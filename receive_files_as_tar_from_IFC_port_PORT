@@ -1,0 +1,5 @@
+#! /bin/sh
+# (c) 2013 by Günther Brunthaler.
+# This script file is free software.
+# Distribution is permitted under the terms of the GPLv3.
+exec receive_files_as_tar_from_lo_port_9999 --override-script-name="$0" "$@"
