@@ -1,0 +1,39 @@
+Customization of scripts for local network interfaces
+=====================================================
+v2025.81
+
+This repository contains wrapper scripts which allow the generic 
+template scripts "send_files_as_tar_to_IFC_port_9999" and 
+"receive_files_as_tar_from_IFC_port_9999" to be customized for 
+the locally available network interfaces.
+
+Use the wrapper scripts unmodified by creating symlinks for them 
+which replace the "IFC"-substring with the name of a network 
+interface. For instance,
+
+$ ln -s send_files_as_tar_to_IFC_port_9999 \ 
+     send_files_as_tar_to_eth0_port_9999
+$ ln -s receive_files_as_tar_from_IFC_port_9999 \
+     receive_files_as_tar_from_eth0_port_9999
+
+The wrapper scripts "send_files_as_tar_to_IFC_port_9999" and 
+"receive_files_as_tar_from_IFC_port_9999" provided by this 
+repository need two external scripts which must be found 
+somewhere within the $PATH:
+
+* receive_files_as_tar_from_lo_port_9999
+* send_files_as_tar_to_lo_port_9999 
+
+Those files are part of a different Git branch in a different 
+repository. The URN of that other repository is:
+
+tag:xworld.mine.nu,2009:usr-local-bin-xworld-jv3gwuidf2ezyr5vbqavqtxyh.git
+
+This reporitory will be a sibling of THIS repository. In order to 
+be able to actually check it out, the URN must be converted into 
+a URL.
+
+This can be done with "git config" by adding a 
+"insteadOF"-key/value pair to the current branch's configuration, 
+which maps the "tag:xworld.mine.nu,2009:"-part of the URN into 
+the URL prefix where the branch is actually hosted.
